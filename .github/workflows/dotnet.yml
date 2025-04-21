@@ -43,9 +43,6 @@ jobs:
         with:
           global-json-file: ./global.json
 
-      - name: Workload install
-        run: dotnet workload restore
-    
       - name: Restore dependencies
         run: dotnet restore
 

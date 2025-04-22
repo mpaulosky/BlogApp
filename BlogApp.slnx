@@ -1,0 +1,23 @@
+﻿<Solution>
+  <Folder Name="/Solution Files/">
+    <File Path=".github\dependabot.yml" />
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="BlogApp.slnx" />
+    <File Path="codecov.yml" />
+    <File Path="global.json" />
+    <File Path="LICENSE.txt" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Solution Files/Issue Templates/">
+    <File Path=".github\ISSUE_TEMPLATE\bug_report.md" />
+    <File Path=".github\ISSUE_TEMPLATE\config.yml" />
+    <File Path=".github\ISSUE_TEMPLATE\feature_request.md" />
+  </Folder>
+  <Folder Name="/Solution Files/WorkFlows/">
+    <File Path=".github\workflows\create-test-report.yml" />
+    <File Path=".github\workflows\dotnet.yml" />
+    <File Path=".github\workflows\formatting.yml" />
+    <File Path=".github\workflows\todos-to-issues.yml" />
+  </Folder>
+</Solution>

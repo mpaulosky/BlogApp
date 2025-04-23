@@ -21,9 +21,11 @@
     <File Path=".github\workflows\todos-to-issues.yml" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="BlogApp.AppHost.Tests\BlogApp.AppHost.Tests.csproj" Type="Classic C#" />
     <Project Path="BlogApp.AppHost\BlogApp.AppHost.csproj" Type="Classic C#" />
+    <Project Path="BlogApp.Domain\BlogApp.Domain.csproj" Type="Classic C#" />
     <Project Path="BlogApp.ServiceDefaults\BlogApp.ServiceDefaults.csproj" Type="Classic C#" />
   </Folder>
-  <Folder Name="/tests/" />
+  <Folder Name="/tests/">
+    <Project Path="BlogApp.AppHost.Tests\BlogApp.AppHost.Tests.csproj" Type="Classic C#" />
+  </Folder>
 </Solution>

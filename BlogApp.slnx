@@ -23,12 +23,13 @@
     <File Path=".github\workflows\todos-to-issues.yml" />
   </Folder>
   <Folder Name="/src/">
+    <Project Path="BlogApp.Api\BlogApp.Api.csproj" Type="Classic C#" />
     <Project Path="BlogApp.AppHost\BlogApp.AppHost.csproj" Type="Classic C#" />
     <Project Path="BlogApp.Domain\BlogApp.Domain.csproj" Type="Classic C#" />
     <Project Path="BlogApp.ServiceDefaults\BlogApp.ServiceDefaults.csproj" Type="Classic C#" />
+    <Project Path="MyMediator\MyMediator.csproj" Type="Classic C#" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="BlogApp.AppHost.Tests.Integration\BlogApp.AppHost.Tests.Integration.csproj" Type="Classic C#" />
-    <Project Path="BlogApp.AppHost.Tests\BlogApp.AppHost.Tests.csproj" Type="Classic C#" />
   </Folder>
 </Solution>

@@ -7,4 +7,10 @@
 // Project Name :  BlogApp.AppHost
 // =======================================================
 
+global using System.Diagnostics;
+
+global using BlogApp.AppHost;
+
+global using Microsoft.Extensions.Diagnostics.HealthChecks;
+
 global using static BlogApp.Domain.Constants.ServiceNames;

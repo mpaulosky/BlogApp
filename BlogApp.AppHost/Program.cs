@@ -1,11 +1,11 @@
-using Projects;
-
 var builder = DistributedApplication.CreateBuilder(args);
 
-var cache = builder.AddRedis("redis");
+var cache = builder.AddRedis(OutputCache);
 
-// Add resource of BlogApp.Api
-var api = builder.AddProject<BlogApp_Api>("blog-app-api")
-		.WithReference(cache);
+var mongoServer = builder.AddMongoDB(ServerName)
+		.WithLifetime(ContainerLifetime.Persistent)
+		.WithMongoExpress();
+
+var mongoDb = mongoServer.AddDatabase(DatabaseName);
 
 builder.Build().Run();

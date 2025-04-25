@@ -6,16 +6,8 @@
         <OutputType>Exe</OutputType>
         <RootNamespace>BlogApp.AppHost.Tests.Integration</RootNamespace>
         <TargetFramework>net9.0</TargetFramework>
-        <!--
-        To enable the Microsoft Testing Platform 'dotnet test' experience, add property:
-          <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
-    
-        To enable the Microsoft Testing Platform native command line experience, add property:
-          <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
-    
-        For more information on Microsoft Testing Platform support in xUnit.net, please visit:
-          https://xunit.net/docs/getting-started/v3/microsoft-testing-platform
-        -->
+        <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+        <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
     </PropertyGroup>
 
     <ItemGroup>
@@ -27,15 +19,16 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentAssertions" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" />
-        <PackageReference Include="xunit.v3" />
-        <PackageReference Include="xunit.runner.visualstudio" />
+        <PackageReference Include="Aspire.Hosting.Testing"/>
+        <PackageReference Include="FluentAssertions"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+        <PackageReference Include="xunit.v3"/>
+        <PackageReference Include="xunit.runner.visualstudio"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BlogApp.AppHost\BlogApp.AppHost.csproj" />
-      <ProjectReference Include="..\BlogApp.Domain\BlogApp.Domain.csproj" />
+        <ProjectReference Include="..\BlogApp.AppHost\BlogApp.AppHost.csproj"/>
+        <ProjectReference Include="..\BlogApp.Domain\BlogApp.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

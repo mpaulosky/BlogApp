@@ -1,10 +1,4 @@
-using FluentAssertions;
-
-using Microsoft.Extensions.Logging;
-
-using static BlogApp.Domain.Constants.ServiceNames;
-
-namespace BlogApp.AppHost.Tests;
+namespace BlogApp.AppHost.Tests.Integration;
 
 public class IntegrationTests
 {
@@ -17,7 +11,7 @@ public class IntegrationTests
 	{
 
 		// Arrange
-		var appHost = await DistributedApplicationTestingBuilder.CreateAsync<Projects.BlogApp_AppHost>();
+		var appHost = await DistributedApplicationTestingBuilder.CreateAsync<Projects.BlogApp_AppHost>(TestContext.Current.CancellationToken);
 
 		appHost.Services.AddLogging(logging =>
 		{
@@ -35,16 +29,16 @@ public class IntegrationTests
 			clientBuilder.AddStandardResilienceHandler();
 		});
 
-		await using var app = await appHost.BuildAsync().WaitAsync(_defaultTimeout);
+		await using var app = await appHost.BuildAsync(TestContext.Current.CancellationToken).WaitAsync(_defaultTimeout, TestContext.Current.CancellationToken);
 
-		await app.StartAsync().WaitAsync(_defaultTimeout);
+		await app.StartAsync(TestContext.Current.CancellationToken).WaitAsync(_defaultTimeout, TestContext.Current.CancellationToken);
 
 		// Act
 		var httpClient = app.CreateHttpClient(WebApp);
 
-		await app.ResourceNotifications.WaitForResourceHealthyAsync(WebApp).WaitAsync(_defaultTimeout);
+		await app.ResourceNotifications.WaitForResourceHealthyAsync(WebApp, TestContext.Current.CancellationToken).WaitAsync(_defaultTimeout, TestContext.Current.CancellationToken);
 
-		var response = await httpClient.GetAsync("/");
+		var response = await httpClient.GetAsync("/", TestContext.Current.CancellationToken);
 
 		// Assert
 		response.StatusCode.Should().Be(HttpStatusCode.OK);
